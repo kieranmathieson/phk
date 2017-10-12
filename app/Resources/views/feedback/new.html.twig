@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block page_heading %}Feedback{% endblock %}
+
+{% block content %}
+    <p>Got something to say? This is the place.</p>
+    {{ form_start(feedbackForm) }}
+        {{ form_widget(feedbackForm) }}
+        <button type="submit" class="btn btn-primary" title="Save the feedback">Save</button>
+        <a class="btn btn-default" href="{{ path('app_diagnosisstate_show') }}" role="button" title="Fuggedaboutit">Cancel</a>
+    {{ form_end(feedbackForm) }}
+{% endblock %}

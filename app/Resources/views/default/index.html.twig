@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block page_heading %}Welcome{% endblock %}
+
+{% block content %}
+    <p>Welcome to the public health knowledge system. </p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus augue, porta id tempor eu,
+        pellentesque ut tellus. Nunc vel aliquam urna. Mauris justo tortor, eleifend nec sem non, accumsan faucibus
+        quam. Nulla ut est ex. Sed scelerisque nulla ut dictum tristique. Mauris congue metus ut leo rhoncus rhoncus a
+        quis elit. Donec dignissim sem nec nisl bibendum fringilla. Donec in ligula eget nisi ultrices luctus id in
+        purus.</p>
+
+    <p>
+       <a href="{{ path('app_diagnosisstate_show', {'stateId': 0}) }}">Diagnosis state page</a>
+    </p>
+{% endblock %}
+

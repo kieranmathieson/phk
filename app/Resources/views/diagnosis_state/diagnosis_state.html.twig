@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block page_heading %}Public Health Knowledge{% endblock %}
+
+{% block content %}
+    {% if selectedDiagnosisState == "" %}
+        <p>Please select a diagnosis state below.</p>
+    {% else %}
+        <dl>
+            <dt>Diagnosis State</dt>
+            <dd>{{ selectedDiagnosisState.stateName }}</dd>
+            <dt>Notes</dt>
+            <dd>
+                {{ selectedDiagnosisState.notes|noneify }}</dd>
+            <dt>Pathogens</dt>
+            <dd>{{ selectedDiagnosisState.pathogens|noneify }}</dd>
+            <dt>Empiric Therapy</dt>
+            <dd>{{ selectedDiagnosisState.empiricTherapy|noneify }}</dd>
+        </dl>
+    {%  endif %}
+    <hr>
+    {{ form_start(diagnosisStatesForm) }}
+    {{ form_widget(diagnosisStatesForm) }}
+    <button id="diagnose-lookup" type="button" class="btn btn-default">Look up</button>
+    {{ form_end(diagnosisStatesForm) }}
+    <br>
+    <div id="choose-diagnosis" class="alert alert-danger" style="display: none" role="alert">Please choose a diagnosis state.</div>
+
+    <script>
+        $(document).ready(function(){
+            $("#choose-diagnosis").hide();
+            $("select").click(function() {
+                $("#choose-diagnosis").hide();
+            });
+            $("#diagnose-lookup").click(function(){
+                var chosen = $('select').get(0).value;
+                if ( ! chosen ) {
+                    $("#choose-diagnosis").show('fast');
+                    return;
+                }
+                window.location.href = '/diagnosis/' + chosen;
+            });
+        });
+    </script>
+{% endblock %}
