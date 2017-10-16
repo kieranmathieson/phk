@@ -3,16 +3,33 @@
 {% block page_heading %}Welcome{% endblock %}
 
 {% block content %}
-    <p>Welcome to the public health knowledge system. </p>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus augue, porta id tempor eu,
-        pellentesque ut tellus. Nunc vel aliquam urna. Mauris justo tortor, eleifend nec sem non, accumsan faucibus
-        quam. Nulla ut est ex. Sed scelerisque nulla ut dictum tristique. Mauris congue metus ut leo rhoncus rhoncus a
-        quis elit. Donec dignissim sem nec nisl bibendum fringilla. Donec in ligula eget nisi ultrices luctus id in
-        purus.</p>
+    <h3>Managing Antimicrobial Resistance through Information Technology</h3>
 
     <p>
-       <a href="{{ path('app_diagnosisstate_show', {'stateId': 0}) }}">Diagnosis state page</a>
+        Antimicrobial resistance (AMR) in low- and middle-income countries (LMIC) is an important issue that
+        would benefit from increased integration of health information technology. This proposed website is a part of
+        a phased approach to help clinicians, policy makers, and program administrators choose targeted interventions
+        based on objective data related to local contexts, and specific resistant pathogens.
+    </p>
+
+    <h4>The First Phase</h4>
+
+    <p>
+        In this phase, the specific guidelines for therapeutic action will be provided based on disease
+        state, and pathogen information.
+    </p>
+
+    <h4>Future Phases</h4>
+
+    <p>
+        Future phases will make this data available using a mobile App and link some of the laboratory data and
+        antibiogram-level data to the application to make smart decisions based on resistance patterns seen at
+        hospitals.  Also, this data will be refined for specific country.
+    </p>
+
+    <p>
+        <a href="{{ path('app_diagnosisstate_show', {'stateId': 0}) }}">Diagnosis state page</a>
     </p>
 {% endblock %}
 
